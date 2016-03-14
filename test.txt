@@ -1,1 +1,1 @@
-master text.txt
+master text.txt中文
