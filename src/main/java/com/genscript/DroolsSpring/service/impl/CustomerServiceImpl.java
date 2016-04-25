@@ -9,6 +9,7 @@
 package com.genscript.DroolsSpring.service.impl;
 
 import org.kie.api.runtime.KieSession;
+import org.kie.api.runtime.rule.QueryResults;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Service;
@@ -73,13 +74,18 @@ public class CustomerServiceImpl implements CustomerService {
 
         // 单例
         KieSession ksession = (KieSession) context.getBean("ksession");
-        ksession.startProcess("com.genscript.DroolsSpring.drools.bpmn.hello");
+        // ksession.startProcess("com.genscript.DroolsSpring.drools.bpmn.hello");
 
         message = new Message();
         message.setMessage("Hello World");
         message.setStatus(Message.HELLO);
+        message.setTimes(0);
+        // System.setProperty("jxl.encoding", "UTF-8");
         ksession.insert(message);
         ksession.fireAllRules();
+
+        QueryResults qr = ksession.getQueryResults("query fact count");
+        System.out.println("Message 对象数目：" + qr.size());
 
     }
 }

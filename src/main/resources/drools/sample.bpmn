@@ -24,7 +24,7 @@
         <terminateEventDefinition />
     </endEvent>
     <scriptTask id="_jbpm-unique-2" name="LLLL" >
-      <script>System.out.println("LLLLLLL");</script>
+      <script>System.out.println("LLLxxx");</script>
     </scriptTask>
 
     <!-- connections -->
@@ -43,7 +43,7 @@
         <dc:Bounds x="145" y="222" width="48" height="48" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape bpmnElement="_3" >
-        <dc:Bounds x="460" y="82" width="48" height="48" />
+        <dc:Bounds x="539" y="218" width="48" height="48" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape bpmnElement="_jbpm-unique-2" >
         <dc:Bounds x="372" y="223" width="80" height="48" />
@@ -54,7 +54,7 @@
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge bpmnElement="_jbpm-unique-2-_3" >
         <di:waypoint x="412" y="247" />
-        <di:waypoint x="484" y="106" />
+        <di:waypoint x="563" y="242" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge bpmnElement="_2-_jbpm-unique-2" >
         <di:waypoint x="257" y="246" />

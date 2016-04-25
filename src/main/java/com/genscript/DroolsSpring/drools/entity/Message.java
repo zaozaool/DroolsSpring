@@ -25,7 +25,9 @@ public class Message {
 
     private String message;
 
-    private int status;
+    private Integer status;
+
+    private Integer times;
 
     public String getMessage() {
         return this.message;
@@ -35,12 +37,20 @@ public class Message {
         this.message = message;
     }
 
-    public int getStatus() {
+    public Integer getStatus() {
         return this.status;
     }
 
-    public void setStatus(int status) {
+    public void setStatus(Integer status) {
         this.status = status;
+    }
+
+    public Integer getTimes() {
+        return times;
+    }
+
+    public void setTimes(Integer times) {
+        this.times = times;
     }
 
 }

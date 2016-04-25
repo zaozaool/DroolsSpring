@@ -1,20 +1,28 @@
-package com.genscript.DroolsSpring.drools
- 
+package com.genscript.DroolsSpring.drools  
+
+import java.util.List;
 import com.genscript.DroolsSpring.drools.entity.Message;
- 
+
+query "query fact count"  
+	Message(); 
+end    
+
 rule "Hello World"
     when
-        m : Message( status == Message.HELLO, myMessage : message )
+        m : Message(status == Message.HELLO, myMessage : message)
     then
-        System.out.println( myMessage );
-        m.setMessage( "Goodbye cruel world" );
-        m.setStatus( Message.GOODBYE );
-        update( m );
+        System.out.println(myMessage);
+        m.setMessage("Goodbye cruel world 拜拜");
+        m.setStatus(Message.GOODBYE);
+        update(m);
 end
 
 rule "GoodBye"
     when
-        Message( status == Message.GOODBYE, myMessage : message )
+        m : Message(status == Message.GOODBYE, times < 3, myMessage : message)
     then
-        System.out.println( myMessage );
+    	System.out.println(System.getProperty("file.encoding"));
+        System.out.println(myMessage);
+        m.setTimes(m.getTimes() + 1);
+        update(m);
 end
